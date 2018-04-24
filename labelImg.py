@@ -1265,18 +1265,19 @@ class MainWindow(QMainWindow, WindowMixin):
         self._saveFile(self.saveFileDialog())
 
     def saveFileDialog(self):
-        caption = '%s - Choose File' % __appname__
-        filters = 'File (*%s)' % LabelFile.suffix
-        openDialogPath = self.currentPath()
-        dlg = QFileDialog(self, caption, openDialogPath, filters)
-        dlg.setDefaultSuffix(LabelFile.suffix[1:])
-        dlg.setAcceptMode(QFileDialog.AcceptSave)
-        filenameWithoutExtension = os.path.splitext(self.filePath)[0]
-        dlg.selectFile(filenameWithoutExtension)
-        dlg.setOption(QFileDialog.DontUseNativeDialog, False)
-        if dlg.exec_():
-            return dlg.selectedFiles()[0]
-        return ''
+        return os.path.splitext(self.filePath)[0] + XML_EXT
+        # caption = '%s - Choose File' % __appname__
+        # filters = 'File (*%s)' % LabelFile.suffix
+        # openDialogPath = self.currentPath()
+        # dlg = QFileDialog(self, caption, openDialogPath, filters)
+        # dlg.setDefaultSuffix(LabelFile.suffix[1:])
+        # dlg.setAcceptMode(QFileDialog.AcceptSave)
+        # filenameWithoutExtension = os.path.splitext(self.filePath)[0]
+        # dlg.selectFile(filenameWithoutExtension)
+        # dlg.setOption(QFileDialog.DontUseNativeDialog, False)
+        # if dlg.exec_():
+        #     return dlg.selectedFiles()[0]
+        # return ''
 
     def _saveFile(self, annotationFilePath):
         if annotationFilePath and self.saveLabels(annotationFilePath):

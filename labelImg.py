@@ -488,8 +488,9 @@ class MainWindow(QMainWindow, WindowMixin):
             self.usingYoloFormat = True
 
     def change_format(self):
-        if self.usingPascalVocFormat: self.set_format("YOLO")
-        elif self.usingYoloFormat: self.set_format("PascalVOC")
+        self.set_format("PascalVOC")
+        # if self.usingPascalVocFormat: self.set_format("YOLO")
+        # elif self.usingYoloFormat: self.set_format("PascalVOC")
 
     def noShapes(self):
         return not self.itemsToShapes

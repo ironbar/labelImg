@@ -25,6 +25,26 @@ by `ImageNet <http://www.image-net.org/>`__.
 Installation
 ------------------
 
+Conda install Ubuntu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code::
+
+    conda create --name labelImg python=2 lxml pyqt=4
+    source activate labelImg
+    make qt4py2
+    python labelImg.py
+
+Conda install Windows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code::
+
+    conda create --name labelImg python=2 lxml pyqt=4
+    source activate labelImg
+    pyrcc4 -o resources.py resources.qrc
+    python labelImg.py
+
 Download prebuilt binaries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
